@@ -24,4 +24,4 @@ jobs:
         run: echo ${{github.event}}
 
       - name: github.repo
-      run: echo ${{github.repository}}
+        run: echo ${{github.repository}}
