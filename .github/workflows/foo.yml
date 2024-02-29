@@ -1,0 +1,27 @@
+name: test
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - main
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  build:
+    name: foo
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: github.event
+        run: echo ${{github.event}}
+
+      - name: github.repo
+      run: echo ${{github.repository}}
